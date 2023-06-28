@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Playlist-1</title>
+
+    <meta charset="UTF-8">
+    <!-- set viewport meta property -->
+    <meta name="viewport" content="Width=device-width, initial-scale=1.0">
+
+    <!-- linking the css file -->
+    <link rel="stylesheet" href="music1.css">
+
+    <!-- use the below to use font-awesome icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="bg-container">
+        <header class="page-header">
+            <div class="logoAndTitle-container">
+                <a href="index.html"><img src="https://png.pngtree.com/element_our/png/20181022/music-and-live-music-logo-with-neon-light-effect-vector-png_199406.jpg" /></a>
+                
+                <p class="titlepara">Favourites</p>
+            </div>
+            <div class="searchboxAndProfile-container">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search" />
+                    <i class="fas fa-microphone"></i>
+                </div>
+                <i class="fas bell fa-bell"></i>
+                <img class="profile-photo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5hVWDN4cVgR-9wRSIVFbgD8R91JePBpranAZbhA0Z0g&s" />
+            </div>
+        </header>
+
+        <input style="display: none;" type="checkbox" id="play-btn-checkbox1" />
+
+        <input style="display: none;" type="checkbox" id="play-btn-checkbox2" />
+
+        <input style="display: none;" type="checkbox" id="play-btn-checkbox3" />
+
+        <div class="for-responsiveness">
+            <main>
+                <div class="playlist-card-container">
+                    <div class="blur-effect-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsZx2Unm4bVMIuQP6QyxUANHMJKCOouJBtmA&usqp=CAU" />
+                        <div class="blur-effect">
+
+                        </div>
+                    </div>
+
+                    <div class="playlist-content-container">
+                        <div style="display: flex;justify-content: space-between;align-items: center;">
+                            <p class="p1" style="color: #FDFDFD; font-size: 1.5rem; font-weight: bold;">Cold Play</p>
+                            <p class="p2" style="color: #A1A3B3; font-size: 1rem;">851 Followers</p>
+                        </div>
+                        <p class="p3" style="color: #A1A3B3; font-size: 1rem;margin-top: -0.5rem;">British Band</p>
+                        <p class="p4" style="color: #A1A3B3; font-size: 0.9rem;margin-bottom: 3rem;margin-top: -0.4rem;">Coldplay is a British music band that has enjoyed continuous success since their inception in 1996 thorugh their intelligent and soulful songs. The band members are Chris Martin (lead vocals), Jonny Buckland (lead guitar), Guy
+                            Berryman (bass guitar) and Will Champion (drums).</p>
+
+                        <div>
+                            <button class="play-all-btn">Play All</button>
+                            <button class="follow-btn">Follow</button>
+                        </div>
+                        <p class="p5" style="color: #767B90; font-size: 0.9rem;">247 Tracks | 128 Albums</p>
+                    </div>
+                </div>
+
+                <div id="queue-1" class="queue-container">
+                    <div class="queue-elements-container">
+                        <div class="queue-element">
+                            <div class="song-image-container">
+                                <p class="queue-number">01</p>
+                                <div class="image-container">
+                                    <img class="queue-song-img" src="data:image/png;base64,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" />
+                                    <i class="fas play-btn fa-play"></i>
+                                </div>
+                                <div class="song-and-artist-container">
+                                    <p class="queue-song-name">Kiss Me More</p>
+                                    <p class="queue-artist-name">Doja Cat</p>
+                                </div>
+                            </div>
+
+                            <div class="icons-container">
+                                <i class="far wishlist-icon fa-heart"></i>
+                                <i class="fas add-icon fa-plus"></i>
+                            </div>
+                        </div>
+                                                <div class="queue-element">
+                            <div class="song-image-container">
+                                <i class="fas currently-on-song fa-stream"></i>
+                                <div class="image-container">
+                                    <img class="queue-song-img" src="data:image/png;base64,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" />
+                                    <i class="fas play-btn fa-play"></i>
+                                </div>
+                                <div class="song-and-artist-container">
+                                    <p class="queue-song-name">Peaches</p>
+                                    <p class="queue-artist-name">Justin Bieber</p>
+                                </div>
+                            </div>
+                            <div class="icons-container">
+                                <i class="far wishlist-icon fa-heart"></i>
+                                <i class="fas add-icon fa-plus"></i>
+                            </div>
+                        </div>
+                        <div class="queue-element">
+                            <div class="song-image-container">
+                                <p class="queue-number">03</p>
+                                <div class="image-container">
+                                    <img class="queue-song-img" src="data:image/jpeg;base64,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" />
+                                    <i class="fas play-btn fa-play"></i>
+                                </div>
+                                <div class="song-and-artist-container">
+                                    <p class="queue-song-name">7 Rings</p>
+                                    <p class="queue-artist-name">Ariana Grande</p>
+                                </div>
+                            </div>
+
+                            <div class="icons-container">
+                                <i class="far wishlist-icon fa-heart"></i>
+                                <i class="fas add-icon fa-plus"></i>
+                            </div>
+                        </div>
+                        <div class="queue-element">
+                            <div class="song-image-container">
+                                <p class="queue-number">04</p>
+                                <div class="image-container">
+                                    <img class="queue-song-img" src="data:image/png;base64,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" />
+                                    <i class="fas play-btn fa-play"></i>
+                                </div>
+                                <div class="song-and-artist-container">
+                                    <p class="queue-song-name">Attention</p>
+                                    <p class="queue-artist-name">Charlie Puth</p>
+                                </div>
+                            </div>
+
+                            <div class="icons-container">
+                                <i class="far wishlist-icon fa-heart"></i>
+                                <i class="fas add-icon fa-plus"></i>
+                            </div>
+                        </div>
+                        <div class="queue-element">
+                            <div class="song-image-container">
+                                <p class="queue-number">05</p>
+                                <div class="image-container">
+                                    <img class="queue-song-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARMAAAC3CAMAAAAGjUrGAAAA5FBMVEX2688AAAD269D/9Nf679L78NP/9df/8tb/9dj779P17M7/9db/9tj679H/89j/8tTe1LxDQjtrZFpmX1axqpV0b2N+em7p38bv5suNh3ni2sDDuqOHgnRgXFN1cWUAAAfMxbEoJyRJSEFVUUq7s6DWzbU1Miykno2ZkoTQxrAbGhg9OzdIRkG+t6KhmotVUUba1LcVFRQcGR7q3srRyreMh3xtaWMhIh2qpo+8tKUrKi14c2xFQkFpZ1lERjs6OjqxqJsYFhJdWUw5OjFRTEsxLiYhICK3s5lnYV6Yk3+AfGokJSC7Z9lFAAAVYklEQVR4nO1dC1vbRtPV7Oq2knWxka2LL9iWZNn4QpwQSEJoaFpoSf////lmVjZgQhLC872NXHT6FINjQDqey5nZ2UVRatSoUaNGjRo1atSoUaNGjRo1atSoUaNGjRo1atSoUaNGjRo1atSoIhzrV19B1WB5RWgLhf3q66gQLN4DGITc+dUXUh0wPgUr7BArv/pSKgMvgDdC5WEPWTFq/yF4Q/BVfNRCOIV2bSsINYGhh4+aD4EZ9aCdGOylG4tYr2x80JZQGIrqRV/gNNF/9UX9WtifDxoYZoXyetRA83DCdRzDRcKVl2ssXrGme7e0JsBMMCeEKbfRgwbJi83Mqg++g6ToF/02HNvOGyjQkVjjBODU18VLNBXmjjCIkLUAvwDIGFoJfdmFzHoLBz5q2xcHbzp3sdAROSQ6cnI971F05RlmIuaxGE5fvTxSEkjwppkKl57RAgSGW8UIINfwkdnsuvSsl4TGeEqeow/63Co5OXAVLwNfWocaNZvRSwu0YnmIUdQSXcAvPMkJtBtDtBKyDeHDF/7SEjLT4T1qeubAUmUKxVjCKczIdkjxB+6La6p4RZNTUdzr04M+noefiJQ+STfFWEKXvzRK0GkgF2glCYSqrI0hNy+JlLeoULwlzLxffYn/Opi9GlOWsdMpcmC9gU8w4o0pkVJwZ1bWhY9+I/6vqkIIlVn/tc6cBieYXpwcKMnYB70BwNSHMEZS8hCWxuPfxYTnsnDWXS67eWRx7z/VxxXBwsZ3mf9WoAIRQ5B5Zx24dgEwP1o93kXRzDAYzOEWadxl+n9H1vGzJYYRMQPyEePqXUPmYpQjfIUypfHIdzAvKprwFVpdof3bF/+/gZgdmhRUjgtyoPdr25WcYAqyzBSOHokUBlbLj2MUiP+ErXgHK1L1rwADpcLX752NZotN5sMaug/1q6PE32CEcPbe+w9EWwYh3oU9iNHuRfaaK6WdYG3c+PCuB/FuiLXM2dF3KCEDi/beVETRpwoYmUEzMSaBpngbHQvnc9OHvnv/1Yx/y23uobvvzW3ezATlntSWcRaNhV9cXW5uzjPh4311Iqz0x5RgJrd/2e38f0ANgfzfnC+RGaNFDsTHaSPq0L2NIn4xuceJGo2eQglAh+9zUNGKPgYMFoLFyIESWQV/1hX75CPeW1OPF3eOIKKrp1ECMNhnS+HHAaXg4sKzFPFujLfCv8BnjpVgTIqsfdm/uzt18lRKMGvt7yKI5cqsY/yWCUvRm8SPBfNj5CSC0EdP+TS9zSLG56dTAhDsbU5WZyOOqswCUmYRRPhMNh4gJ2J1jFJ9gfe25YRU7c9ArrLuI0TcoXyzXOC76gTSdfrBBXJiwlAoTJ1DWuZiC8PMz2Gyr+sffJFRy6QzpXxzsHIozrLWMVdnskh2EoAhvd/M4vMf07CL1Z7G2VLEmqMZMtCgjrTanTQOjrnW6ckcbL+Ftkw81Gn6WYS/9t6eCx+w/isDCToHWgTvxMiJq1HnjdY2fDiiWtcSv/88J5297M+pWeqRfL02pVLBz/XroY6c+CB7sQpjh/LtFs8wkz01FC3ucSp5TpENb4BBBVNw5B0cN1atTenHm7JJa/6ENLnDdB/bKcbFpUY1MXUL+KQrFDH8xzaQk/7lpkWgN2WCzp9DCRy53//1lQSXwZWPl8QAGYQo2p5xkGK43SRScTbCG/OeUA0/huEetg1MSjuWAN9SlBDw5o32ykE7YXDbXcN6DtXuiO4w/ivo3LpFsOw8RsJuvyn+Rn+7wmAORIw+Mgq0aBCiMR7ajVaaX220hZjBTKXZFImFyzY3O2mI0WPO0pjtfD3fP+dhCaiM4ioWxSLoN6JiAOP4pNkPtiFWTCkm3GadvLExjuDk1aPOMlnvfr1/Ulbk1zp9PHMoFR/cBo3WNC4zBtPnsuO0+ZfJ5SyUn4yWy/BRTh5itndFjzObGOQfc0zI5r1IcNEpSk6s8KONkcX4e+MKQashG21Bkzhp3VwC9OOAnnr7boZf/NGTy4ewyvOSxmDvOFHfU8fIWY65YmT33t2D/rK8FydLyPr1jTpJC4goYPyeQxc5Gc0c/BA32gAFeld4DTd2l142bF6tysjzQKFoauWdSc2O0U7U5TEXOwLkc7pJops74Jvn2wWsGshP0YJuRHdMNz4iTqIVwN/4Lz5y8o+k41B+R28n8Yj4Uqt6dlYvqfGoBn1u7OjU9m+znUvfcvL2Bs5MtAhMQ3ecTEzkpFuuuUtOsnu5p73DideBw6DirKiXFxRPgr7e3YmM2XyXE3Pz/BSDRNctHyQnypYTmJlKZ8NJuPw2J6vhHAJR5RZcaSci+NzY0al/NCaPc1J0aAE5pjT8kBNIffIhycm97tNgl5PByja7c7h0qmsrTpaW8aRxcZ+TxJx3H/WdjO4+tMlNuuQ2U/2wjCcjshFRICdoI0GjTy+WSuXtTow1WgWWVDqG83eVXVd2ljSzJbrNRnGPkqFhpNlODt322EIyp6lJd5s3gIa7gqPjS3O1BrIarYV0DpEk14j/bJdLqLt5x+hTd1fNR/kcCreaRbN6MpGrf39w666zOPQUY1DsXDCXK8jp8E3yfgQjDLIf3yf+CZpLYIjLqxArnyxZDXtw/T558x59Lxd6t8w72c4KPB93VbLLsanPkBVhKNWb42H5axu1ff67o7JtRHnj4fsZ93Y40b45SXAn5SePPp3v2JsHPv00rL0V1T38A9651evEYb1jyTUM/NBYXk3jgP2eUz1YHOzqiiU8E7tRw6VejKJNifEQGvkYCqZVLQepdJFMUHWs5mcNTdPHZO3qbGTefxl7WnHzNRa7WdcnjpiMtPi5K/gJepBWsbjSoAVipq2pIV32T86nDlOsCKL7nm4Zz2o9Atzs2Im6XMj5209DWh9YoN/Y09YxrJRKscJl0rVTKn7lArojW7No5Pn9u2H29Hmc7PwUC8MUuqRlyVWCFa2ReP3AnC2g+Jdv+7vg0oztTuxJflRqvJLXePL5WzA1eRYlk92RC96UaSgB9Ch0ILQOYzQTwsxhWSG1IqYoNJkjhwe0TuxQvA0tfEZOYNyDO34OJ8Xu9hb5s6mUwGSnvx7KRceIVvAP/X/1rr8PdflRl9PCJpWCKZfde5fRrtrdEXvnWZln95c5XVpGolUCTbKBvyBfU9qRkawyUEOQjVdanUIemKVoN0DTFd7RbsudPSfKTndtzZCGSLFKRX4mSL327oCW3LqTKg3AUcteoRUt6iGZFBLFDPqGpXi93eqNOd0fc/AQbFelmqWC82lmzpPhlrcpqGjTQaXa+zylCkSLe55ieQOyECEby8KH3U1MjPd/lpJsd9hC7a4p52orVLGKO6KEx2ViKkelqgNxc0pDW90R9QyyiU61K+1CZ/Z1tnuh6s/qtvTBqIV9QAUhs2ma0Aqlwk1ogh2Zqda6Mm3GoDwjRy4iujiPOomqIt79Ye6+VMt+zMN9RLuiHWkgYY+SmKLW6rO3LSFEvhbVKgXLVVA3JT3C++jexAklS7YruBBPGRe+w/CBOOVxi3Z/eNNz5EGfk7t4aeDQM4OKVYLlcJIIxi61mCau5IS8x4j7DyOf+xMh5fLhkJIFOQkSjwKtWtqMHHtR7HlWsS2patCkqc2IFtAtDXwhOQHfwae+2lEsnjRFTVjpjPbU3X2rEX8mUessMe9aXtxC03Au5axc+EDGVADlm8VTyoq80zFKTkaWYtws3AecsKeSUthEh/Bu/ccJy63K7ie5rigHDuwFfa4VaeVGaflxQd2B5YjLDGx5rRZp1nOTMeh+lSP5Y8MEX2FpMwyk6vt+FnHat4xSvtWmvYZsdojCVfx1ZLKNgbByKLdaENmc3ichBRUfF41Wr9E/bcLQERl8fbXmj4e4Rn4ZiBx6afouMoWDpWVEC2hcEtAYBRpGlpgG0DEPRVXrKimWKqd77fgU5SuqWLvVsVGwpUdC0Y87X4lu5oU/KAfjbUve2dA3n/oqBMST011j7hFdGibEdwG9yfKmrYplHYVE1IDGPvH9ooLYngftjue12yZkKgaB2SN27Wavv81I6t/SqAUfttuf1uvcNgTjh1RDeHMqAkXQdC3KQ8MKzhaTjCdqLnpyBBJaHQ8Dbz4dcwtlWvTIYICjXX6jIuzPzDsSnaDVyHu3u8I6XbWgylvtUsGjmGdlD39duQhLsJvo3jSLRBUOTwG50YqzhIKJPWg+zD0Smjb8OtiOpgm/b1YiOISLoZF/+X1rLVLEa2v6dU73msvfXVSq8biFWMr+BT/okdBMiBNFb3ZIozD+qfPYZlqZZ/NVa7sqtB53gsR84AQi6LlZHwb5PN4SiK8win+IBXe9pOMAcqiWrL+FsSYlSccV4AXqB1LZY8VHulONvrmRjQnP4IyFvv+GKRyjxYPWAMaTjq267C90m9wdStkjaFBsJvfajei32P2qTgGq2TUZij1ocVkDZjQzuzkPBmV48d3L/vYgEnKCBbbb70cBOqSfwylywj8PXDlcSK1Hx69gIi5heWtSlFZEZZ938Un21V9B6m0OhCn0Z104cqIxnjYFWlQUjOFz+JoZgRRq3k1K+7z147iyYxfqUrYgPXJ1r/W2k7qWU4ybHYovdNLh1H7OlSMnXCwWTIoRM42DTyAisg+GEpairTOr8FwkypKVR+49mnpGq8MPC9deBGyzA8dLoPOcQ0K1oMeuy+2Elt46ML3G2p0Qz5bxcUpCzfxQVE+v3UKclMPDPiSoY7mP8RXkUZgylIhoNFbuZdknxgDtLwwjUsExuzcX1HDs0KC64l2eUTLzAqigXLuD3ab4qpjFh0aro6HXv8XCxDmBTL6RqjuA2a0+9edPe3f1t5CVgkyPR0SpOZF7PERYdiHIj6rMCV2gZkTLAm5Q29MJzPROajlknGo3pgfQ2w5y+s0fLz0wrIsW0KMfYmEtNaL0pM1ghhnNsicrIpVf9CspYe8gMCFslBVpNrOfkoD1cliVbVk7/O1w2JCJ9ymcOGIFMeVihDuYyG6KXy6C8U5KIdsZysZNpeEe3Ba2tDFdmx/oiowwUt0qTEWH6idYO6s/5ISp3vJs4Tcy4sRxjlMSriKBYoTZxvgLLDp+KYKscn2Th7BvZ5EmliRhdEqWokajhbUZqlZ6cPpKFz/gxHKM7uis3Tr6sOgZSMWadusSJb3GOqKFAtSCzLLTvvm9n1IJWLe13HosxwHY1QHKUEXV2pBzeZoBxogvkM6ShfmtOTSLCSMq1hCcl15o60u4lJ7iQ8zNdYSyeClXeQqo/kld94bLw2ZLHtvH5qmQa1KYhdzNrLkX3RzC5JVpPJZFheeq3RZ8XNqbs0JuzFPwNbx5O4fYtNx1xA7lmVWY0fJq5xwCu7WTwHDOqCaxFC29jspjzOfX+VaEO1gJHcIgC4XuaWrpVapQNawH/aIPo2loi+2iRwAdSlaMv6cDei1+FI2kYEE5W+zDhuzNvqWjoU2JuUPayjI6kFPaFN4KBspWlSTjRj79E2DcWS1nuR8mfj4Lpu0JwN9BwskznM247fWJzLaNGLpcCKMxmQzkE9qoXaVJgm/D86ftHixlwzo6PKcIaNkBFDK4eFELblg5JuI3DeF5pp9NB+MrakMeXk/SzqobNbxtkex243PanC/kD1scJp6er3rZuiMpMdPHO1UVBNq/OYQTMgc1OmsZFFOMHPpMxhIjHyMrnmAyF8tjDQVHUDMEHzTablHeKGMqj2LoReRuFp/Jn1CeWyUPAeeDdfXj6x3Y9hhdVZ03LXmKgziFJZelLc/71B0yfqRPNH3WR0bkizRlAJcmRqbSmeTyWg/27HxeTDK+7JCK1jqRBqJ34XMop8CFnfTgqpiNSc9a1mPvtepxP4bXBZMhmblLWCQetRglrly0khiSyou1B0DlUJJiT9FA6BNhdchryJUcTywPYB3PFMzGD+ZTVGGYYffLmmxJ2oFq+uNSnWz24h76qrKPlGCyCcrzhZnRxbqP7o55eHOFkH+pyHJ0f9Q7gkknmEXoT7qHwcT2HJZ0i/Ya5tNclH/SiNlhC3rSXiw7uj6EdQddRh/sISUII4OlVA8inH9Iyg6KPZxAYXny/fcXDTSIaR+T7+GkOT5Ox/MRWsGiXZwwXStTj3D9NpyGZaJCefLWtAwU+k7/MNy7naQSxhDKE1KZMYWpJw9CEXz4G/QSXbPKulgVNuYgf9aVyBOUH4YmaIUIywGudccweFNODIvoFIYG/dENNZpMHltD2wtgWX8q/0gGs/3RKN/cG8/PoXkZ6f7Hu76HKoQq/78tgIRn5z04vIlkslJEI4Bz2ZKlxkN/H/2mBHPYeBTKgkS4BVxsfEDYVpDCOE5t/vjWNVXj0fALwGC2/VMSPL/6ZyYdkWERNG1UdIXrKWAOl5K2lLDn0FPKJjWpsfdYzPRXs4hzw9M01UEzcRzH8wzXX8ZzWPeGgouy5cKTPlwakh7htGBYpXHp5wBlSbtUsJaLt9YLt6WxnaRJQdVN86BXXGbL7jILimmnj3G22VuGprcpmVUbNd5UlMdU8yEs9v4MVcZEdAxdW5qKsP0WtHKDhuNR26e2MLiSdN/Fg9P+4uPHPw9OOzd/zSKLly1bWiW1tWUTpswrf5Tagalb/X35T4CZwWlU1vSqHsbwoYh0jLx+WjbzhabZtkfAB+1+hNFc/y1cBUK+jjn2Eub+vvvNBpYRtWG12UtveSI7hjQI9SS1t3/OipV1H9t+yShpa/50hGK2DCoo5pMUCmO/Kpzvgdn5HILtVInasKaozToLZtqOqj5sQDLV9swkax/CoCuMTfQxwgEMokrOmDwbws6OzjJX5mUv3w4Nr1urpR8JbuB/mocfOFeiPIvx39Ob3PCEtUk8bzrQ9/mj5eI+Q4hsvX7neCrfblY/FrOiTUfuTpr9i06n026lf2DWOUzfBr6qbwILQ7NBfd8/2Y+O2s9C8OVH1PW3+/fHpirQOEQy6wbFajotimyYRy5KFOd2gwvG16wJ7Vd8X7X8j4BO8Ore/Nr5tjOLgk2TQH1/F10w93rmDF+/ivi+S5LvQjTujtT9erz6HlRNZzQASPp+j5X8U8Du1gmvQwytsiewycOszMKK0GzOZtMUoDNj/20TKXF75OMYk8u4V8wS5uqGYXilauNu6C9XpyM4agVJw3sBhBC0jMZ/JwFKjySLW9RGOmv2z88Hg/PTVJ5VNx+supH2ov66otASP3I1ChK07MdDP8fqb4WgvJMw09Qrfn7U/wAPlRcTgv5yFUEVZelXo0aNGjVq1KhRo0aNGjVq1KhRo0aNGjVq1KhRo0aNGjVq1KhRo8be4v8AyZ+XYY39zw0AAAAASUVORK5CYII=" />
+                                    <i class="fas play-btn fa-play"></i>
+                                </div>
+                                <div class="song-and-artist-container">
+                                    <p class="queue-song-name">Good 4 U</p>
+                                    <p class="queue-artist-name">Olivia Rodrigo</p>
+                                </div>
+                            </div>
+
+                            <div class="icons-container">
+                                <i class="far wishlist-icon fa-heart"></i>
+                                <i class="fas add-icon fa-plus"></i>
+                            </div>
+                        </div>
+                        <div class="queue-element">
+                            <div class="song-image-container">
+                                <p class="queue-number">06</p>
+                                <div class="image-container">
+                                    <img class="queue-song-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD6KQWmo8N4z_EbHXkKsnuDYEmQbICCby0_g&usqp=CAU" />
+                                    <i class="fas play-btn fa-play"></i>
+                                </div>
+                                <div class="song-and-artist-container">
+                                    <p class="queue-song-name">Sugar</p>
+                                    <p class="queue-artist-name">Maroon 5</p>
+                                </div>
+                            </div>
+
+                            <div class="icons-container">
+                                <i class="far wishlist-icon fa-heart"></i>
+                                <i class="fas add-icon fa-plus"></i>
+                            </div>
+                        </div>
+                        <div class="queue-element">
+                            <div class="song-image-container">
+                                <p class="queue-number">07</p>
+                                <div class="image-container">
+                                    <img class="queue-song-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBPQ7zdu6MTVOLPD5ctkUtKamISbfXOJJArw&usqp=CAU" />
+                                    <i class="fas play-btn fa-play"></i>
+                                </div>
+                                <div class="song-and-artist-container">
+                                    <p class="queue-song-name">Blank Space</p>
+                                    <p class="queue-artist-name">Taylor swift</p>
+                                </div>
+                            </div>
+
+                            <div class="icons-container">
+                                <i class="far wishlist-icon fa-heart"></i>
+                                <i class="fas add-icon fa-plus"></i>
+                            </div>
+                        </div>
+                        <div class="queue-element">
+                            <div class="song-image-container">
+                                <p class="queue-number">08</p>
+                                <div class="image-container">
+                                    <img class="queue-song-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB1jvRNDjzdDyuLTpb8qgDXQJ3ohYA7Cc97Q&usqp=CAU" />
+                                    <i class="fas play-btn fa-play"></i>
+                                </div>
+                                <div class="song-and-artist-container">
+                                    <p class="queue-song-name">We're Good</p>
+                                    <p class="queue-artist-name">Dua Lipa</p>
+                                </div>
+                            </div>
+
+                            <div class="icons-container">
+                                <i class="far wishlist-icon fa-heart"></i>
+                                <i class="fas add-icon fa-plus"></i>
+                            </div>
+                        </div>
+                        <div class="queue-element">
+                            <div class="song-image-container">
+                                <p class="queue-number">09</p>
+                                <div class="image-container">
+                                    <img class="queue-song-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsSR7DKnRvM1FHRg2sy0RfdI-1s3wG4Ul3JQ&usqp=CAU" />
+                                    <i class="fas play-btn fa-play"></i>
+                                </div>
+                                <div class="song-and-artist-container">
+                                    <p class="queue-song-name">Shape Of You</p>
+                                    <p class="queue-artist-name">Ed Sheeran</p>
+                                </div>
+                            </div>
+
+                            <div class="icons-container">
+                                <i class="far wishlist-icon fa-heart"></i>
+                                <i class="fas add-icon fa-plus"></i>
+                            </div>
+                        </div>
+                        <div class="queue-element">
+                            <div class="song-image-container">
+                                <p class="queue-number">10</p>
+                                <div class="image-container">
+                                    <img class="queue-song-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk6IAQOmpgU9xKpl5Pk34fsZChYP3b2L0hnA&usqp=CAU" />
+
+                                    <i class="fas play-btn fa-play"></i>
+                                </div>
+                                <div class="song-and-artist-container">
+                                    <p class="queue-song-name">Cheap Thrills</p>
+                                    <p class="queue-artist-name">Roar</p>
+                                </div>
+                            </div>
+
+                            <div class="icons-container">
+                                <i class="far wishlist-icon fa-heart"></i>
+                                <i class="fas add-icon fa-plus"></i>
+                            </div>
+                        </div>
+                        <div class="queue-element">
+                            <div class="song-image-container">
+                                <p class="queue-number">11</p>
+                                <div class="image-container">
+                                    <img class="queue-song-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhDDGSsjq1QpCtcWwzbaXvKGMerbqgFDK4Dw&usqp=CAU" />
+                                    <i class="fas play-btn fa-play"></i>
+                                </div>
+                                <div class="song-and-artist-container">
+                                    <p class="queue-song-name">Roar</p>
+                                    <p class="queue-artist-name">Katy Perry</p>
+                                </div>
+                            </div>
+
+                            <div class="icons-container">
+                                <i class="far wishlist-icon fa-heart"></i>
+                                <i class="fas add-icon fa-plus"></i>
+                            </div>
+                        </div>
+                        <div class="queue-element">
+                            <div class="song-image-container">
+                                <p class="queue-number">12</p>
+                                <div class="image-container">
+                                    <img class="queue-song-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyWMiiOCZb6RDHIKp7VEyG99flJO_HOe4CLg&usqp=CAU" />
+                                    <i class="fas play-btn fa-play"></i>
+                                </div>
+                                <div class="song-and-artist-container">
+                                    <p class="queue-song-name">Starboy</p>
+                                    <p class="queue-artist-name">The Weeknd</p>
+                                </div>
+                            </div>
+
+                            <div class="icons-container">
+                                <i class="far wishlist-icon fa-heart"></i>
+                                <i class="fas add-icon fa-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <aside>
+                <div class="latest-release-container">
+                    <div class="latest-release-header">
+                        <p>Similar Artists</p>
+                        <a href="">View All</a>
+                    </div>
+                    <div class="latest-release-cards-container">
+                        <div class="latest-release-card">
+                            <div class="song-name-and-img-container">
+                                <div class="latest-release-img-container">
+                                    <label for="play-btn-checkbox1"><i class="fas latest-release-play-btn fa-play play-1"></i><i class="latest-release-pause-btn fas fa-pause pause-1"></i></label>
+                                </div>
+                                <div>
+                                    <p class="song-name">Onism</p>
+                                    <p class="date">AUG 11, 2017</p>
+                                </div>
+                            </div>
+
+                            <div class="latest-release-dropdown-container">
+                                <label for="latest-release-checkbox1"><i class="fas more-details fa-ellipsis-h"></i></label>
+                                <input type="checkbox" id="latest-release-checkbox1">
+                                <div class="latest-release-dropdown">
+
+                                    <div class="links-container">
+                                        <i class="fas fa-play"></i>
+                                        <a href="">Play Now</a>
+                                    </div>
+
+                                    <hr>
+
+                                    <div class="links-container">
+                                        <i class="fas fa-plus"></i>
+                                        <a href="">Add To Queue</a>
+                                    </div>
+
+                                    <hr>
+
+                                    <div class="links-container">
+                                        <i class="fas fa-bars"></i>
+                                        <a href="">Add To Favourites</a>
+                                    </div>
+
+                                    <hr>
+
+                                    <div class="links-container">
+                                        <i class="fas fa-exclamation-circle"></i>
+                                        <a href=""><span></span>Get Info</a>
+                                    </div>
+
+                                </div>
+                                <p class="time">4:44</p>
+                            </div>
+
+                        </div>
+                        <div class="latest-release-card">
+                            <div class="song-name-and-img-container">
+                                <div class="latest-release-img-container">
+                                    <label for="play-btn-checkbox3"><i class="fas latest-release-play-btn fa-play play-3"></i><i class="latest-release-pause-btn fas fa-pause pause-3"></i></label>
+                                </div>
+                                <div>
+                                    <p class="song-name">FREELIFE</p>
+                                    <p class="date">JUNE 12,2021</p>
+                                </div>
+                            </div>
+
+                            <div class="latest-release-dropdown-container">
+                                <label for="latest-release-checkbox3"><i class="fas more-details fa-ellipsis-h"></i></label>
+                                <input type="checkbox" id="latest-release-checkbox3">
+                                <div class="latest-release-dropdown">
+
+                                    <div class="links-container">
+                                        <i class="fas fa-play"></i>
+                                        <a href="">Play Now</a>
+                                    </div>
+
+                                    <hr>
+
+                                    <div class="links-container">
+                                        <i class="fas fa-plus"></i>
+                                        <a href="">Add To Queue</a>
+                                    </div>
+
+                                    <hr>
+
+                                    <div class="links-container">
+                                        <i class="fas fa-bars"></i>
+                                        <a href="">Add To Favourites</a>
+                                    </div>
+
+                                    <hr>
+
+                                    <div class="links-container">
+                                        <i class="fas fa-exclamation-circle"></i>
+                                        <a href=""><span></span>Get Info</a>
+                                    </div>
+
+                                </div>
+                                <p class="time">4:44</p>
+                            </div>
+
+                        </div>
+                        <div class="latest-release-card">
+                            <div class="song-name-and-img-container">
+                                <div class="latest-release-img-container">
+                                    <label for="play-btn-checkbox2"><i class="fas latest-release-play-btn fa-play play-2"></i><i class="latest-release-pause-btn fas fa-pause pause-2"></i></label>
+                                </div>
+                                <div>
+                                    <p class="song-name">LEFTOUT</p>
+                                    <p class="date">AUG 12, 2021</p>
+                                </div>
+                            </div>
+
+                            <div class="latest-release-dropdown-container">
+                                <label for="latest-release-checkbox2"><i class="fas more-details fa-ellipsis-h"></i></label>
+                                <input type="checkbox" id="latest-release-checkbox2">
+                                <div class="latest-release-dropdown">
+
+                                    <div class="links-container">
+                                        <i class="fas fa-play"></i>
+                                        <a href="">Play Now</a>
+                                    </div>
+
+                                    <hr>
+
+                                    <div class="links-container">
+                                        <i class="fas fa-plus"></i>
+                                        <a href="">Add To Queue</a>
+                                    </div>
+
+                                    <hr>
+
+                                    <div class="links-container">
+                                        <i class="fas fa-bars"></i>
+                                        <a href="">Add To Favourites</a>
+                                    </div>
+
+                                    <hr>
+
+                                    <div class="links-container">
+                                        <i class="fas fa-exclamation-circle"></i>
+                                        <a href=""><span></span>Get Info</a>
+                                    </div>
+
+                                </div>
+                                <p class="time">4:44</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div id="queue-2" class="queue-container">
+                    <div class="queue-header">
+                        <p>Recently Played</p>
+                        <div class="queue-btn-container">
+
+                            <!-- here label is acting as a button for dropdown effect -->
+                            <a href="">View All</a>
+                        </div>
+                    </div>
+
+                    <div class="queue-elements-container">
+                        <div id="queue-element-2" class="queue-element">
+                            <div class="song-image-container">
+                                <p class="queue-number">01</p>
+                                <div class="image-container">
+                                    <img class="queue-song-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4Np6m-fc6f2WdoECVO9Htw21Lsyd4W6MDzg&usqp=CAU" />
+                                    <i class="fas play-btn fa-play"></i>
+                                </div>
+                                <div class="song-and-artist-container">
+                                    <p class="queue-song-name">Mirage</p>
+                                    <p class="queue-artist-name">Else</p>
+                                </div>
+                            </div>
+
+                            <i class="far wishlist-icon fa-heart"></i>
+                        </div>
+                        <div id="queue-element-2" class="queue-element">
+                            <div class="song-image-container">
+                                <i class="fas currently-on-song fa-stream"></i>
+                                <div class="image-container">
+                                    <img class="queue-song-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWir41ogXMbd_pasoLCleAHbxKIHFHMF3WNg&usqp=CAU" />
+                                    <i class="fas play-btn fa-play"></i>
+                                </div>
+                                <div class="song-and-artist-container">
+                                    <p class="queue-song-name">Worry Bout Us</p>
+                                    <p class="queue-artist-name">Rosie Lowe</p>
+                                </div>
+                            </div>
+
+                            <i class="far wishlist-icon fa-heart"></i>
+                        </div>
+                        <div id="queue-element-2" class="queue-element">
+                            <div class="song-image-container">
+                                <p class="queue-number">03</p>
+                                <div class="image-container">
+                                    <img class="queue-song-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy9VSz-jl8duQvOUs5OMDYtBgS_wwg9aFeDA&usqp=CAU" />
+                                    <i class="fas play-btn fa-play"></i>
+                                </div>
+                                <div class="song-and-artist-container">
+                                    <p class="queue-song-name">New Skin</p>
+                                    <p class="queue-artist-name">Flume</p>
+                                </div>
+                            </div>
+
+                            <i class="far wishlist-icon fa-heart"></i>
+                        </div>
+                        <div id="queue-element-2" class="queue-element">
+                            <div class="song-image-container">
+                                <p class="queue-number">04</p>
+                                <div class="image-container">
+                                    <img class="queue-song-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWWVX-dYgARh3zJs2rsklxj0XuzExIgesOEQ&usqp=CAU" />
+                                    <i class="fas play-btn fa-play"></i>
+                                </div>
+                                <div class="song-and-artist-container">
+                                    <p class="queue-song-name">Worry Bout Us</p>
+                                    <p class="queue-artist-name">Rosie Lowe</p>
+                                </div>
+                            </div>
+
+                            <i class="far wishlist-icon fa-heart"></i>
+                        </div>
+                        <div id="queue-element-2" class="queue-element">
+                            <div class="song-image-container">
+                                <p class="queue-number">05</p>
+                                <div class="image-container">
+                                    <img class="queue-song-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS68vly1LH5BLt-4cdqQxqwreH44HpiregvQA&usqp=CAU" />
+                                    <i class="fas play-btn fa-play"></i>
+                                </div>
+                                <div class="song-and-artist-container">
+                                    <p class="queue-song-name">New Skin</p>
+                                    <p class="queue-artist-name">Flume</p>
+                                </div>
+                            </div>
+
+                            <i class="far wishlist-icon fa-heart"></i>
+                        </div>
+                        <div id="queue-element-2" class="queue-element">
+                            <div class="song-image-container">
+                                <p class="queue-number">06</p>
+                                <div class="image-container">
+                                    <img class="queue-song-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlFf9clCg5sxiOaPd3pVeulckKE3TtXjCvSg&usqp=CAU" />
+                                    <i class="fas play-btn fa-play"></i>
+                                </div>
+                                <div class="song-and-artist-container">
+                                    <p class="queue-song-name">Mirage</p>
+                                    <p class="queue-artist-name">Else</p>
+                                </div>
+                            </div>
+
+                            <i class="far wishlist-icon fa-heart"></i>
+                        </div>
+                        <div id="queue-element-2" class="queue-element">
+                            <div class="song-image-container">
+                                <p class="queue-number">07</p>
+                                <div class="image-container">
+                                    <img class="queue-song-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_ji-mds3WyaJqO11LCovoN4zDwzpj2PtSPg&usqp=CAU" />
+                                    <i class="fas play-btn fa-play"></i>
+                                </div>
+                                <div class="song-and-artist-container">
+                                    <p class="queue-song-name">Mirage</p>
+                                    <p class="queue-artist-name">Else</p>
+                                </div>
+                            </div>
+
+                            <i class="far wishlist-icon fa-heart"></i>
+                        </div>
+                        <div id="queue-element-2" class="queue-element">
+                            <div class="song-image-container">
+                                <p class="queue-number">08</p>
+                                <div class="image-container">
+                                    <img class="queue-song-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiXdMfRDjsZI8yjW9ory2UUoG1IvR9AzbFrg&usqp=CAU" />
+                                    <i class="fas play-btn fa-play"></i>
+                                </div>
+                                <div class="song-and-artist-container">
+                                    <p class="queue-song-name">Worry Bout Us</p>
+                                    <p class="queue-artist-name">Rosie Lowe</p>
+                                </div>
+                            </div>
+
+                            <i class="far wishlist-icon fa-heart"></i>
+                        </div>
+                        <div id="queue-element-2" class="queue-element">
+                            <div class="song-image-container">
+                                <p class="queue-number">08</p>
+                                <div class="image-container">
+                                    <img class="queue-song-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQstsh4EqNrLQftX7OpVIIeExNhAwDulYx__Q&usqp=CAU" />
+                                    <i class="fas play-btn fa-play"></i>
+                                </div>
+                                <div class="song-and-artist-container">
+                                    <p class="queue-song-name">New Skin</p>
+                                    <p class="queue-artist-name">Flume</p>
+                                </div>
+                            </div>
+
+                            <i class="far wishlist-icon fa-heart"></i>
+                        </div>
+                        <div id="queue-element-2" class="queue-element">
+                            <div class="song-image-container">
+                                <p class="queue-number">09</p>
+                                <div class="image-container">
+                                    <img class="queue-song-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS65fDZoAZ23ZWOpcnvkZa2_G_kOsx3MadYEQ&usqp=CAU" />
+                                    <i class="fas play-btn fa-play"></i>
+                                </div>
+                                <div class="song-and-artist-container">
+                                    <p class="queue-song-name">Worry Bout Us</p>
+                                    <p class="queue-artist-name">Rosie Lowe</p>
+                                </div>
+                            </div>
+
+                            <i class="far wishlist-icon fa-heart"></i>
+                        </div>
+                        <div id="queue-element-2" class="queue-element">
+                            <div class="song-image-container">
+                                <p class="queue-number">10</p>
+                                <div class="image-container">
+                                    <img class="queue-song-img" src="images/q10.jpg" />
+                                    <i class="fas play-btn fa-play"></i>
+                                </div>
+                                <div class="song-and-artist-container">
+                                    <p class="queue-song-name">New Skin</p>
+                                    <p class="queue-artist-name">Flume</p>
+                                </div>
+                            </div>
+
+                            <i class="far wishlist-icon fa-heart"></i>
+                        </div>
+                        <div id="queue-element-2" class="queue-element">
+                            <div class="song-image-container">
+                                <p class="queue-number">11</p>
+                                <div class="image-container">
+                                    <img class="queue-song-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqwj_tJQGHl_2W-vtBXlKhG0reGZQij6hO8Q&usqp=CAU" />
+                                    <i class="fas play-btn fa-play"></i>
+                                </div>
+                                <div class="song-and-artist-container">
+                                    <p class="queue-song-name">Mirage</p>
+                                    <p class="queue-artist-name">Else</p>
+                                </div>
+                            </div>
+
+                            <i class="far wishlist-icon fa-heart"></i>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <footer>
+            <!-- Song Thumnail, Title, Singer -->
+            <div id="footer-song-info">
+                <div id="footer-song-image"></div>
+                <div id="footer-song-name">
+                    <span>Peaches</span>
+                    <span class="subtitle">Justin Bieber</span>
+                </div>
+                <div>
+                    <span>
+                    <i class="far fa-heart subtitle"></i>
+                </span>
+                    <span>
+                    <i class="fas fa-ban subtitle"></i>
+                </span>
+                </div>
+            </div>
+
+            <!-- Contains Player Controls: Play, Pause, Next, Previous, Shuffle and Repeat with Slider -->
+            <div id="player">
+
+                <div id="player-control">
+                    <div><i class="fas fa-random"></i></div>
+                    <div><i class="fas fa-step-backward"></i></div>
+                    <div><i class="far fa-pause-circle" style="font-size: 2rem;"></i></div>
+                    <div><i class="fas fa-step-forward"></i></div>
+                    <div><i class="fas fa-redo"></i></div>
+                </div>
+
+                <div id="player-slider-container">
+                    <div class="subtitle">
+                        0:00
+                    </div>
+
+                    <input type="range" min="0" max="100" value="25">
+
+                    <div class="subtitle">
+                        4:44
+                    </div>
+                </div>
+            </div>
+
+            <!-- Volume buttom, Expand button -->
+            <div class="player-extras">
+                <div>
+                    <i class="fas fa-list-ul"></i>
+                </div>
+                <div>
+                    <i class="fas fa-laptop"></i>
+                </div>
+
+                <div class="volume-container">
+                    <span><i class="fas fa-volume-up"></i></span>
+                    <input type="range" min="0" max="100" value="50" class="slider" id="volume-slider">
+                </div>
+                <div><i class="fas fa-expand"></i></div>
+            </div>
+
+        </footer>
+    </div>
+</body>
+
+</html>
